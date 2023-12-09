@@ -1,6 +1,6 @@
-﻿namespace Froms.Supplier
+﻿namespace Forms.Suppliers
 {
-    partial class Frm_supplier_new
+    partial class Frm_supplier
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@
             lbl_supplierName = new Label();
             txt_supplierName = new TextBox();
             grp_supplierInfo = new GroupBox();
+            Frm_supplier_SearchZipCodeBtn = new Button();
             lbl_supplierPhone2 = new Label();
             txt_supplierPhone2 = new TextBox();
             lbl_supplierPhone1 = new Label();
@@ -49,8 +50,11 @@
             txt_supplierStreet = new TextBox();
             lbl_supplierZipCode = new Label();
             txt_supplierZipCode = new TextBox();
-            Frm_saveBtn = new Button();
+            Frm_supplier_saveBtn = new Button();
             chk_supplierStatus = new CheckBox();
+            Frm_supplier_search = new Button();
+            label1 = new Label();
+            textBox1 = new TextBox();
             grp_supplierInfo.SuspendLayout();
             SuspendLayout();
             // 
@@ -88,6 +92,9 @@
             // 
             // grp_supplierInfo
             // 
+            grp_supplierInfo.Controls.Add(label1);
+            grp_supplierInfo.Controls.Add(textBox1);
+            grp_supplierInfo.Controls.Add(Frm_supplier_SearchZipCodeBtn);
             grp_supplierInfo.Controls.Add(lbl_supplierPhone2);
             grp_supplierInfo.Controls.Add(txt_supplierPhone2);
             grp_supplierInfo.Controls.Add(lbl_supplierPhone1);
@@ -106,15 +113,25 @@
             grp_supplierInfo.Controls.Add(txt_supplierZipCode);
             grp_supplierInfo.Location = new Point(12, 190);
             grp_supplierInfo.Name = "grp_supplierInfo";
-            grp_supplierInfo.Size = new Size(746, 369);
+            grp_supplierInfo.Size = new Size(746, 425);
             grp_supplierInfo.TabIndex = 4;
             grp_supplierInfo.TabStop = false;
             grp_supplierInfo.Text = "Endereço e Contato";
             // 
+            // Frm_supplier_SearchZipCodeBtn
+            // 
+            Frm_supplier_SearchZipCodeBtn.Location = new Point(150, 56);
+            Frm_supplier_SearchZipCodeBtn.Name = "Frm_supplier_SearchZipCodeBtn";
+            Frm_supplier_SearchZipCodeBtn.Size = new Size(94, 29);
+            Frm_supplier_SearchZipCodeBtn.TabIndex = 20;
+            Frm_supplier_SearchZipCodeBtn.Text = "Buscar";
+            Frm_supplier_SearchZipCodeBtn.UseVisualStyleBackColor = true;
+            Frm_supplier_SearchZipCodeBtn.Click += Frm_supplier_SearchZipCodeBtn_Click;
+            // 
             // lbl_supplierPhone2
             // 
             lbl_supplierPhone2.AutoSize = true;
-            lbl_supplierPhone2.Location = new Point(409, 166);
+            lbl_supplierPhone2.Location = new Point(449, 234);
             lbl_supplierPhone2.Name = "lbl_supplierPhone2";
             lbl_supplierPhone2.Size = new Size(66, 20);
             lbl_supplierPhone2.TabIndex = 19;
@@ -122,7 +139,7 @@
             // 
             // txt_supplierPhone2
             // 
-            txt_supplierPhone2.Location = new Point(409, 189);
+            txt_supplierPhone2.Location = new Point(449, 257);
             txt_supplierPhone2.Name = "txt_supplierPhone2";
             txt_supplierPhone2.Size = new Size(291, 27);
             txt_supplierPhone2.TabIndex = 18;
@@ -130,7 +147,7 @@
             // lbl_supplierPhone1
             // 
             lbl_supplierPhone1.AutoSize = true;
-            lbl_supplierPhone1.Location = new Point(409, 103);
+            lbl_supplierPhone1.Location = new Point(449, 171);
             lbl_supplierPhone1.Name = "lbl_supplierPhone1";
             lbl_supplierPhone1.Size = new Size(66, 20);
             lbl_supplierPhone1.TabIndex = 17;
@@ -138,7 +155,7 @@
             // 
             // txt_supplierPhone1
             // 
-            txt_supplierPhone1.Location = new Point(409, 126);
+            txt_supplierPhone1.Location = new Point(449, 194);
             txt_supplierPhone1.Name = "txt_supplierPhone1";
             txt_supplierPhone1.Size = new Size(291, 27);
             txt_supplierPhone1.TabIndex = 16;
@@ -146,7 +163,7 @@
             // lbl_supplierEmail
             // 
             lbl_supplierEmail.AutoSize = true;
-            lbl_supplierEmail.Location = new Point(409, 35);
+            lbl_supplierEmail.Location = new Point(449, 103);
             lbl_supplierEmail.Name = "lbl_supplierEmail";
             lbl_supplierEmail.Size = new Size(46, 20);
             lbl_supplierEmail.TabIndex = 15;
@@ -154,7 +171,7 @@
             // 
             // txt_supplierEmail
             // 
-            txt_supplierEmail.Location = new Point(409, 58);
+            txt_supplierEmail.Location = new Point(449, 126);
             txt_supplierEmail.Name = "txt_supplierEmail";
             txt_supplierEmail.Size = new Size(291, 27);
             txt_supplierEmail.TabIndex = 14;
@@ -162,7 +179,7 @@
             // cmb_supplierUf
             // 
             cmb_supplierUf.FormattingEnabled = true;
-            cmb_supplierUf.Location = new Point(6, 318);
+            cmb_supplierUf.Location = new Point(6, 386);
             cmb_supplierUf.Name = "cmb_supplierUf";
             cmb_supplierUf.Size = new Size(151, 28);
             cmb_supplierUf.TabIndex = 13;
@@ -170,7 +187,7 @@
             // lbl_supplierUf
             // 
             lbl_supplierUf.AutoSize = true;
-            lbl_supplierUf.Location = new Point(6, 295);
+            lbl_supplierUf.Location = new Point(6, 363);
             lbl_supplierUf.Name = "lbl_supplierUf";
             lbl_supplierUf.Size = new Size(26, 20);
             lbl_supplierUf.TabIndex = 12;
@@ -179,7 +196,7 @@
             // lbl_supplierCity
             // 
             lbl_supplierCity.AutoSize = true;
-            lbl_supplierCity.Location = new Point(6, 233);
+            lbl_supplierCity.Location = new Point(6, 301);
             lbl_supplierCity.Name = "lbl_supplierCity";
             lbl_supplierCity.Size = new Size(56, 20);
             lbl_supplierCity.TabIndex = 11;
@@ -187,7 +204,7 @@
             // 
             // txt_supplierCity
             // 
-            txt_supplierCity.Location = new Point(6, 256);
+            txt_supplierCity.Location = new Point(6, 324);
             txt_supplierCity.Name = "txt_supplierCity";
             txt_supplierCity.Size = new Size(291, 27);
             txt_supplierCity.TabIndex = 10;
@@ -195,7 +212,7 @@
             // lbl_supplierBairro
             // 
             lbl_supplierBairro.AutoSize = true;
-            lbl_supplierBairro.Location = new Point(6, 166);
+            lbl_supplierBairro.Location = new Point(6, 234);
             lbl_supplierBairro.Name = "lbl_supplierBairro";
             lbl_supplierBairro.Size = new Size(49, 20);
             lbl_supplierBairro.TabIndex = 9;
@@ -203,7 +220,7 @@
             // 
             // txt_supplierBairro
             // 
-            txt_supplierBairro.Location = new Point(6, 189);
+            txt_supplierBairro.Location = new Point(6, 257);
             txt_supplierBairro.Name = "txt_supplierBairro";
             txt_supplierBairro.Size = new Size(291, 27);
             txt_supplierBairro.TabIndex = 8;
@@ -211,7 +228,7 @@
             // lbl_supplierStreet
             // 
             lbl_supplierStreet.AutoSize = true;
-            lbl_supplierStreet.Location = new Point(6, 103);
+            lbl_supplierStreet.Location = new Point(6, 171);
             lbl_supplierStreet.Name = "lbl_supplierStreet";
             lbl_supplierStreet.Size = new Size(34, 20);
             lbl_supplierStreet.TabIndex = 7;
@@ -219,7 +236,7 @@
             // 
             // txt_supplierStreet
             // 
-            txt_supplierStreet.Location = new Point(6, 126);
+            txt_supplierStreet.Location = new Point(6, 194);
             txt_supplierStreet.Name = "txt_supplierStreet";
             txt_supplierStreet.Size = new Size(291, 27);
             txt_supplierStreet.TabIndex = 6;
@@ -240,14 +257,15 @@
             txt_supplierZipCode.Size = new Size(138, 27);
             txt_supplierZipCode.TabIndex = 4;
             // 
-            // Frm_saveBtn
+            // Frm_supplier_saveBtn
             // 
-            Frm_saveBtn.Location = new Point(664, 565);
-            Frm_saveBtn.Name = "Frm_saveBtn";
-            Frm_saveBtn.Size = new Size(94, 29);
-            Frm_saveBtn.TabIndex = 5;
-            Frm_saveBtn.Text = "Salvar";
-            Frm_saveBtn.UseVisualStyleBackColor = true;
+            Frm_supplier_saveBtn.Location = new Point(664, 658);
+            Frm_supplier_saveBtn.Name = "Frm_supplier_saveBtn";
+            Frm_supplier_saveBtn.Size = new Size(94, 29);
+            Frm_supplier_saveBtn.TabIndex = 5;
+            Frm_supplier_saveBtn.Text = "Salvar";
+            Frm_supplier_saveBtn.UseVisualStyleBackColor = true;
+            Frm_supplier_saveBtn.Click += Frm_supplier_saveBtn_Click;
             // 
             // chk_supplierStatus
             // 
@@ -259,20 +277,47 @@
             chk_supplierStatus.Text = "Ativo";
             chk_supplierStatus.UseVisualStyleBackColor = true;
             // 
-            // Frm_supplier_new
+            // Frm_supplier_search
+            // 
+            Frm_supplier_search.Location = new Point(309, 42);
+            Frm_supplier_search.Name = "Frm_supplier_search";
+            Frm_supplier_search.Size = new Size(94, 29);
+            Frm_supplier_search.TabIndex = 8;
+            Frm_supplier_search.Text = "Buscar";
+            Frm_supplier_search.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 103);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 20);
+            label1.TabIndex = 22;
+            label1.Text = "Numero";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(6, 126);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(291, 27);
+            textBox1.TabIndex = 21;
+            // 
+            // Frm_supplier
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(770, 606);
+            ClientSize = new Size(770, 699);
+            Controls.Add(Frm_supplier_search);
             Controls.Add(chk_supplierStatus);
-            Controls.Add(Frm_saveBtn);
+            Controls.Add(Frm_supplier_saveBtn);
             Controls.Add(grp_supplierInfo);
             Controls.Add(lbl_supplierName);
             Controls.Add(txt_supplierName);
             Controls.Add(lbl_supplierCnpj);
             Controls.Add(txt_supplierCnpj);
-            Name = "Frm_supplier_new";
+            Name = "Frm_supplier";
             Text = "Fornecedor";
+            Load += Frm_supplier_Load;
             grp_supplierInfo.ResumeLayout(false);
             grp_supplierInfo.PerformLayout();
             ResumeLayout(false);
@@ -286,7 +331,7 @@
         private Label lbl_supplierName;
         private TextBox txt_supplierName;
         private GroupBox grp_supplierInfo;
-        private Button Frm_saveBtn;
+        private Button Frm_supplier_saveBtn;
         private CheckBox chk_supplierStatus;
         private Label lbl_supplierCity;
         private TextBox txt_supplierCity;
@@ -304,5 +349,9 @@
         private TextBox txt_supplierPhone1;
         private Label lbl_supplierEmail;
         private TextBox txt_supplierEmail;
+        private Button Frm_supplier_search;
+        private Button Frm_supplier_SearchZipCodeBtn;
+        private Label label1;
+        private TextBox textBox1;
     }
 }

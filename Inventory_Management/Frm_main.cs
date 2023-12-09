@@ -1,7 +1,7 @@
 using Forms.Inventory.Reports;
 using Forms.Products.Edit;
 using Forms.Products.New;
-using Froms.Supplier;
+using Forms.Suppliers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Inventory_Management
@@ -35,7 +35,7 @@ namespace Inventory_Management
 
         private void fornecedorNovoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            _serviceProvider.GetRequiredService<Frm_supplier_new>().Show();
+            _serviceProvider.GetRequiredService<Frm_supplier>().Show();
         }
 
         private void productSubMenuNew_Click(object sender, EventArgs e)

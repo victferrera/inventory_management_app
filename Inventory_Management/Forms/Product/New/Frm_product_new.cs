@@ -27,7 +27,7 @@ namespace Forms.Products.New
             try
             {
                 _productService.Save(product);
-                MessageBox.Show(SuccessMessages.productSavedSucess);
+                MessageBox.Show(SuccessMessages.productSavedSuccess);
             }
             catch(ValidatorException ex)
             {
