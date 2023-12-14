@@ -34,6 +34,7 @@
             contextMenuStrip2 = new ContextMenuStrip(components);
             menuStrip1 = new MenuStrip();
             productMenu = new ToolStripMenuItem();
+            productSubMenuNew = new ToolStripMenuItem();
             productSubMenuEdit = new ToolStripMenuItem();
             supplierMenu = new ToolStripMenuItem();
             supplierSubMenuNew = new ToolStripMenuItem();
@@ -42,7 +43,7 @@
             actionsSubMenuOutput = new ToolStripMenuItem();
             reportsMenu = new ToolStripMenuItem();
             reportsSubMenuInventory = new ToolStripMenuItem();
-            productSubMenuNew = new ToolStripMenuItem();
+            reportsSubMenuSupplier = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -83,10 +84,17 @@
             productMenu.Size = new Size(76, 24);
             productMenu.Text = "Produto";
             // 
+            // productSubMenuNew
+            // 
+            productSubMenuNew.Name = "productSubMenuNew";
+            productSubMenuNew.Size = new Size(131, 26);
+            productSubMenuNew.Text = "Novo";
+            productSubMenuNew.Click += productSubMenuNew_Click;
+            // 
             // productSubMenuEdit
             // 
             productSubMenuEdit.Name = "productSubMenuEdit";
-            productSubMenuEdit.Size = new Size(224, 26);
+            productSubMenuEdit.Size = new Size(131, 26);
             productSubMenuEdit.Text = "Editar";
             productSubMenuEdit.Click += produtoEditarToolStripMenuItem_Click;
             // 
@@ -100,7 +108,7 @@
             // supplierSubMenuNew
             // 
             supplierSubMenuNew.Name = "supplierSubMenuNew";
-            supplierSubMenuNew.Size = new Size(128, 26);
+            supplierSubMenuNew.Size = new Size(224, 26);
             supplierSubMenuNew.Text = "Novo";
             supplierSubMenuNew.Click += fornecedorNovoToolStripMenuItem1_Click;
             // 
@@ -125,7 +133,7 @@
             // 
             // reportsMenu
             // 
-            reportsMenu.DropDownItems.AddRange(new ToolStripItem[] { reportsSubMenuInventory });
+            reportsMenu.DropDownItems.AddRange(new ToolStripItem[] { reportsSubMenuInventory, reportsSubMenuSupplier });
             reportsMenu.Name = "reportsMenu";
             reportsMenu.Size = new Size(90, 24);
             reportsMenu.Text = "Relatórios";
@@ -133,16 +141,16 @@
             // reportsSubMenuInventory
             // 
             reportsSubMenuInventory.Name = "reportsSubMenuInventory";
-            reportsSubMenuInventory.Size = new Size(145, 26);
+            reportsSubMenuInventory.Size = new Size(224, 26);
             reportsSubMenuInventory.Text = "Estoque";
             reportsSubMenuInventory.Click += estoqueToolStripMenuItem_Click;
             // 
-            // productSubMenuNew
+            // reportsSubMenuSupplier
             // 
-            productSubMenuNew.Name = "productSubMenuNew";
-            productSubMenuNew.Size = new Size(224, 26);
-            productSubMenuNew.Text = "Novo";
-            productSubMenuNew.Click += productSubMenuNew_Click;
+            reportsSubMenuSupplier.Name = "reportsSubMenuSupplier";
+            reportsSubMenuSupplier.Size = new Size(224, 26);
+            reportsSubMenuSupplier.Text = "Fornecedores";
+            reportsSubMenuSupplier.Click += reportsSubMenuSupplier_Click;
             // 
             // Frm_main
             // 
@@ -177,5 +185,6 @@
         private ToolStripMenuItem reportsSubMenuInventory;
         private ToolStripMenuItem productSubMenuEdit;
         private ToolStripMenuItem productSubMenuNew;
+        private ToolStripMenuItem reportsSubMenuSupplier;
     }
 }

@@ -11,5 +11,8 @@
         public static readonly string houseNumberEmpty = "O numero da casa não pode estar vazio";
         public static readonly string emailEmpty = "Um email deve ser fornecido";
         public static readonly string addressNull = "Nenhum endereço fornecido para este contato";
+        public static readonly string cnpjInvalid = "CNPJ inválido";
+        public static readonly string cnpjInvalidLength = "CNPJ no tamanho inválido";
+        public static readonly string supplierNameEmpty = "O nome do fornecedor não pode estar vazio";
     }
 }

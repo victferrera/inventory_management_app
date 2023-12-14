@@ -5,5 +5,6 @@ namespace GE.BL.Interfaces
     public interface ISupplierRepository
     {
         void Save(Supplier supplier);
+        List<Supplier> GetAllSuppliers();
     }
 }

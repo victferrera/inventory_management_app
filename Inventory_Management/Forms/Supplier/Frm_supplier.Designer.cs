@@ -33,6 +33,8 @@
             lbl_supplierName = new Label();
             txt_supplierName = new TextBox();
             grp_supplierInfo = new GroupBox();
+            label1 = new Label();
+            txt_supplierHouseNumber = new TextBox();
             Frm_supplier_SearchZipCodeBtn = new Button();
             lbl_supplierPhone2 = new Label();
             txt_supplierPhone2 = new TextBox();
@@ -53,8 +55,6 @@
             Frm_supplier_saveBtn = new Button();
             chk_supplierStatus = new CheckBox();
             Frm_supplier_search = new Button();
-            label1 = new Label();
-            textBox1 = new TextBox();
             grp_supplierInfo.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,7 +93,7 @@
             // grp_supplierInfo
             // 
             grp_supplierInfo.Controls.Add(label1);
-            grp_supplierInfo.Controls.Add(textBox1);
+            grp_supplierInfo.Controls.Add(txt_supplierHouseNumber);
             grp_supplierInfo.Controls.Add(Frm_supplier_SearchZipCodeBtn);
             grp_supplierInfo.Controls.Add(lbl_supplierPhone2);
             grp_supplierInfo.Controls.Add(txt_supplierPhone2);
@@ -117,6 +117,22 @@
             grp_supplierInfo.TabIndex = 4;
             grp_supplierInfo.TabStop = false;
             grp_supplierInfo.Text = "Endereço e Contato";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 103);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 20);
+            label1.TabIndex = 22;
+            label1.Text = "Numero";
+            // 
+            // txt_supplierHouseNumber
+            // 
+            txt_supplierHouseNumber.Location = new Point(6, 126);
+            txt_supplierHouseNumber.Name = "txt_supplierHouseNumber";
+            txt_supplierHouseNumber.Size = new Size(291, 27);
+            txt_supplierHouseNumber.TabIndex = 21;
             // 
             // Frm_supplier_SearchZipCodeBtn
             // 
@@ -286,22 +302,6 @@
             Frm_supplier_search.Text = "Buscar";
             Frm_supplier_search.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 103);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 20);
-            label1.TabIndex = 22;
-            label1.Text = "Numero";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(6, 126);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(291, 27);
-            textBox1.TabIndex = 21;
-            // 
             // Frm_supplier
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -352,6 +352,6 @@
         private Button Frm_supplier_search;
         private Button Frm_supplier_SearchZipCodeBtn;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txt_supplierHouseNumber;
     }
 }

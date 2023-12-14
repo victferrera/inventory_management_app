@@ -2,19 +2,15 @@
 {
     public class Supplier
     {
-        public Guid Id { get; private set; }
-        public string Name { get; private set; }
-        public string Cnpj { get; private set; }
-        public bool Status { get; private set; }
-        public Contact Contact { get; private set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Cnpj { get; set; }
+        public bool Status { get; set; }
+        public Contact Contact { get; set; }
 
-        public Supplier(string name, string cnpj, bool status, Contact contact)
+        public Supplier()
         {
             Id = Guid.NewGuid();
-            Name = name;
-            Cnpj = cnpj;
-            Status = status;
-            Contact = contact;
         }
     }
 }

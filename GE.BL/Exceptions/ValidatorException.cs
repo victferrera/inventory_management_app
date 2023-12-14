@@ -9,6 +9,11 @@
             errors = new List<string>();
         }
 
+        public ValidatorException(List<string> errors)
+        {
+            this.errors = errors;
+        }
+
         public void AddError(string message)
         {
             errors.Add(message);

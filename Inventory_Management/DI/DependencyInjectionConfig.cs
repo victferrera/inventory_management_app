@@ -15,6 +15,7 @@ using GE.Services.Products;
 using GE.Services.Suppliers;
 using GE.Services.ZipCode;
 using Gerenciamento_Estoque.Services;
+using Inventory_Management.Forms.Report.Supplier;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Inventory_Management
@@ -44,6 +45,7 @@ namespace Inventory_Management
             services.AddTransient<Frm_product_edit>();
             services.AddTransient<Frm_supplier>();
             services.AddTransient<Frm_inventory_all_products>();
+            services.AddTransient<Frm_supplier_all_suppliers>();
 
             services.AddSingleton<IInventoryProductService, InventoryProductService>();
             services.AddSingleton<IInventoryProductRepository, InventoryProductRepository>();
@@ -59,6 +61,7 @@ namespace Inventory_Management
             services.AddSingleton<ProductValidator>();
             services.AddSingleton<AddressValidator>();
             services.AddSingleton<ContactValidator>();
+            services.AddSingleton<SupplierValidator>();
 
             serviceProvider = services.BuildServiceProvider();
         }

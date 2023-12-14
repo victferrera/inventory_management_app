@@ -16,17 +16,11 @@ namespace GE.BL.Entities
         public string City { get; set; }
         [JsonPropertyName("uf")]
         public string State { get; set; }
-        public int HouseNumber { get; set; }
+        public string HouseNumber { get; set; }
 
-        public Address(string zipCode, string street, string neighborhood, string city, string state, int houseNumber)
+        public Address()
         {
-            Id = Guid.NewGuid();
-            ZipCode = zipCode;
-            Street = street;
-            Neighborhood = neighborhood;
-            City = city;
-            State = state;
-            HouseNumber = houseNumber;
+
         }
     }
 }

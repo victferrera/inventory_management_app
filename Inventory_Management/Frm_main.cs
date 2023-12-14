@@ -2,6 +2,7 @@ using Forms.Inventory.Reports;
 using Forms.Products.Edit;
 using Forms.Products.New;
 using Forms.Suppliers;
+using Inventory_Management.Forms.Report.Supplier;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Inventory_Management
@@ -41,6 +42,13 @@ namespace Inventory_Management
         private void productSubMenuNew_Click(object sender, EventArgs e)
         {
             _serviceProvider.GetRequiredService<Frm_product_new>().Show();
+        }
+
+        private void reportsSubMenuSupplier_Click(object sender, EventArgs e)
+        {
+            var frm_rel_suppliers = _serviceProvider.GetService<Frm_supplier_all_suppliers>();
+            frm_rel_suppliers.GetAllSuppliers();
+            frm_rel_suppliers.Show();
         }
     }
 }
