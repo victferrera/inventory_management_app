@@ -5,9 +5,21 @@ namespace GE.Repository.Suppliers
 {
     public class SupplierRepository : ISupplierRepository
     {
+        private List<Supplier> _suppliers;
+        public SupplierRepository()
+        {
+            if(_suppliers == null)
+                _suppliers = new List<Supplier>();
+        }
+
+        public List<Supplier> GetAllSuppliers()
+        {
+            return _suppliers;
+        }
+
         public void Save(Supplier supplier)
         {
-            throw new NotImplementedException();
+            _suppliers.Add(supplier);
         }
     }
 }

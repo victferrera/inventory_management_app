@@ -1,15 +1,21 @@
 ﻿using Forms.Inventory.Reports;
 using Forms.Products.Edit;
 using Forms.Products.New;
-using Froms.Supplier;
+using Forms.Suppliers;
 using GE.BL.Interfaces;
 using GE.BL.Validators;
+using GE.Repository.Addresss;
+using GE.Repository.Contacts;
 using GE.Repository.Inventory;
 using GE.Repository.Products;
 using GE.Repository.Suppliers;
+using GE.Services.Addresss;
+using GE.Services.Contacts;
 using GE.Services.Products;
 using GE.Services.Suppliers;
+using GE.Services.ZipCode;
 using Gerenciamento_Estoque.Services;
+using Inventory_Management.Forms.Report.Supplier;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Inventory_Management
@@ -37,8 +43,9 @@ namespace Inventory_Management
             services.AddTransient<Frm_main>();
             services.AddTransient<Frm_product_new>();
             services.AddTransient<Frm_product_edit>();
-            services.AddTransient<Frm_supplier_new>();
+            services.AddTransient<Frm_supplier>();
             services.AddTransient<Frm_inventory_all_products>();
+            services.AddTransient<Frm_supplier_all_suppliers>();
 
             services.AddSingleton<IInventoryProductService, InventoryProductService>();
             services.AddSingleton<IInventoryProductRepository, InventoryProductRepository>();
@@ -46,7 +53,15 @@ namespace Inventory_Management
             services.AddSingleton<ISupplierService, SupplierService>();
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IProductService, ProductService>();
+            services.AddSingleton<IContactRepository, ContactRepository>();
+            services.AddSingleton<IContactService, ContactService>();
+            services.AddSingleton<IZipCodeService, ZipCodeService>();
+            services.AddSingleton<IAddressRepository, AddressRepository>();
+            services.AddSingleton<IAddressService, AddressService>();
             services.AddSingleton<ProductValidator>();
+            services.AddSingleton<AddressValidator>();
+            services.AddSingleton<ContactValidator>();
+            services.AddSingleton<SupplierValidator>();
 
             serviceProvider = services.BuildServiceProvider();
         }

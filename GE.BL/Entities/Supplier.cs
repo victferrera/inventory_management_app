@@ -1,4 +1,16 @@
 ﻿namespace GE.BL.Entities
 {
-    public record Supplier(Guid Id, string Name, bool Status, string Identification, Contact Contact);
+    public class Supplier
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Cnpj { get; set; }
+        public bool Status { get; set; }
+        public Contact Contact { get; set; }
+
+        public Supplier()
+        {
+            Id = Guid.NewGuid();
+        }
+    }
 }
