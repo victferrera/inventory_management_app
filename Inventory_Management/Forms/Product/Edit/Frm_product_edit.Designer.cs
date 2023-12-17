@@ -76,7 +76,6 @@
             // frm_edit_removeBtn
             // 
             frm_edit_removeBtn.Cursor = Cursors.Hand;
-            frm_edit_removeBtn.Enabled = false;
             frm_edit_removeBtn.Location = new Point(137, 260);
             frm_edit_removeBtn.Name = "frm_edit_removeBtn";
             frm_edit_removeBtn.Size = new Size(94, 29);
@@ -88,7 +87,6 @@
             // frm_edit_saveBtn
             // 
             frm_edit_saveBtn.Cursor = Cursors.Hand;
-            frm_edit_saveBtn.Enabled = false;
             frm_edit_saveBtn.Location = new Point(6, 260);
             frm_edit_saveBtn.Name = "frm_edit_saveBtn";
             frm_edit_saveBtn.Size = new Size(94, 29);
