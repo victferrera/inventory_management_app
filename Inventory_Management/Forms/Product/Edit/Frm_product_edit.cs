@@ -2,10 +2,11 @@
 using GE.BL.Exceptions;
 using GE.BL.Helpers;
 using GE.BL.Interfaces;
+using Inventory_Management.Forms;
 
 namespace Forms.Products.Edit
 {
-    public partial class Frm_product_edit : Form
+    public partial class Frm_product_edit : FormBase
     {
         private readonly IProductService _productService;
         public Frm_product_edit(IProductService productService)
@@ -21,6 +22,7 @@ namespace Forms.Products.Edit
                 var product = new Product(GuidHelper.TryParse(txt_edit_productId.Text.Trim()), txt_edit_name.Text.Trim(), txt_edit_desc.Text.Trim());
 
                 _productService.Update(product);
+                ResetForm(this);
             }
             catch(NotFoundException ex)
             {

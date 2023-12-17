@@ -2,10 +2,11 @@
 using GE.BL.Exceptions;
 using GE.BL.Interfaces;
 using GE.BL.Messages;
+using Inventory_Management.Forms;
 
 namespace Forms.Suppliers
 {
-    public partial class Frm_supplier : Form
+    public partial class Frm_supplier : FormBase
     {
         private readonly ISupplierService _supplierService;
         private readonly IZipCodeService _zipCodeService;
@@ -46,6 +47,7 @@ namespace Forms.Suppliers
             {
                 _supplierService.Save(supplier);
                 MessageBox.Show(SuccessMessages.supplierSavedSuccess);
+                ResetForm(this);
             }catch(ValidatorException ex)
             {
                 MessageBox.Show(String.Join("\n", ex.errors));
