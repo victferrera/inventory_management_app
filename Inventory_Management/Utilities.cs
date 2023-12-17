@@ -1,31 +1,29 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Inventory_Management
 {
     internal class Utilities
     {
         public static void ResetAllControls(Control control)
         {
-            foreach(Control current in control.Controls)
+            IterateEachControlAndClean(control);
+        }
+
+        private static void IterateEachControlAndClean(Control control)
+        {
+            foreach (Control current in control.Controls)
             {
+                if (current is GroupBox)
+                    IterateEachControlAndClean(current);
+
                 if (current is TextBox)
                     ResetTextBox(current);
 
-                if(current is GroupBox)
-                {
-                    foreach(Control groupBoxItem in current.Controls)
-                    {
-                        if(groupBoxItem is TextBox)
-                            ResetTextBox(groupBoxItem);
-
-                        if (groupBoxItem is ComboBox)
-                            ResetComboBox(groupBoxItem);
-                    }
-                }
-
-                if(current is CheckBox)
+                if (current is CheckBox)
                     ResetCheckBox(current);
 
-                if(current is ComboBox)
+                if (current is ComboBox)
                     ResetComboBox(current);
             }
         }
