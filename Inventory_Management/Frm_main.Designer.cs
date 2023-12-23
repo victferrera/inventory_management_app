@@ -44,6 +44,7 @@
             reportsMenu = new ToolStripMenuItem();
             reportsSubMenuInventory = new ToolStripMenuItem();
             reportsSubMenuSupplier = new ToolStripMenuItem();
+            supplierSubMenuEdit = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             // supplierMenu
             // 
-            supplierMenu.DropDownItems.AddRange(new ToolStripItem[] { supplierSubMenuNew });
+            supplierMenu.DropDownItems.AddRange(new ToolStripItem[] { supplierSubMenuNew, supplierSubMenuEdit });
             supplierMenu.Name = "supplierMenu";
             supplierMenu.Size = new Size(112, 24);
             supplierMenu.Text = "Fornecedores";
@@ -141,16 +142,23 @@
             // reportsSubMenuInventory
             // 
             reportsSubMenuInventory.Name = "reportsSubMenuInventory";
-            reportsSubMenuInventory.Size = new Size(224, 26);
+            reportsSubMenuInventory.Size = new Size(181, 26);
             reportsSubMenuInventory.Text = "Estoque";
             reportsSubMenuInventory.Click += estoqueToolStripMenuItem_Click;
             // 
             // reportsSubMenuSupplier
             // 
             reportsSubMenuSupplier.Name = "reportsSubMenuSupplier";
-            reportsSubMenuSupplier.Size = new Size(224, 26);
+            reportsSubMenuSupplier.Size = new Size(181, 26);
             reportsSubMenuSupplier.Text = "Fornecedores";
             reportsSubMenuSupplier.Click += reportsSubMenuSupplier_Click;
+            // 
+            // supplierSubMenuEdit
+            // 
+            supplierSubMenuEdit.Name = "supplierSubMenuEdit";
+            supplierSubMenuEdit.Size = new Size(224, 26);
+            supplierSubMenuEdit.Text = "Editar";
+            supplierSubMenuEdit.Click += supplierSubMenuEdit_Click;
             // 
             // Frm_main
             // 
@@ -186,5 +194,6 @@
         private ToolStripMenuItem productSubMenuEdit;
         private ToolStripMenuItem productSubMenuNew;
         private ToolStripMenuItem reportsSubMenuSupplier;
+        private ToolStripMenuItem supplierSubMenuEdit;
     }
 }

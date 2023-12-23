@@ -2,7 +2,6 @@
 using GE.BL.Entities;
 using GE.BL.Validators;
 using GE.BL.Exceptions;
-using FluentValidation;
 using GE.BL.Helpers;
 
 namespace GE.Services.Suppliers
@@ -85,6 +84,17 @@ namespace GE.Services.Suppliers
         public List<Supplier> GetAllSupliers()
         {
             return _supplierRepository.GetAllSuppliers();
+        }
+
+        public Supplier GetSupplierByCnpj(string cnpj)
+        {
+            return _supplierRepository.GetSupplierByCnpj(cnpj);
+        }
+
+        public void Update(Supplier supplier)
+        {
+            Validate(supplier);
+            _supplierRepository.Update(supplier);
         }
     }
 }

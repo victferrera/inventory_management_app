@@ -302,6 +302,7 @@
             Frm_supplier_search.TabIndex = 8;
             Frm_supplier_search.Text = "Buscar";
             Frm_supplier_search.UseVisualStyleBackColor = true;
+            Frm_supplier_search.Click += Frm_supplier_search_Click;
             // 
             // Frm_supplier
             // 

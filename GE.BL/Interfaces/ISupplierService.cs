@@ -6,5 +6,7 @@ namespace GE.BL.Interfaces
     {
         void Save(Supplier supplier);
         List<Supplier> GetAllSupliers();
+        Supplier GetSupplierByCnpj(string cnpj);
+        void Update(Supplier supplier);
     }
 }
