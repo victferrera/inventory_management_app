@@ -64,6 +64,7 @@
             txt_supplierCnpj.Name = "txt_supplierCnpj";
             txt_supplierCnpj.Size = new Size(291, 27);
             txt_supplierCnpj.TabIndex = 0;
+            txt_supplierCnpj.Leave += txt_supplierCnpj_Leave;
             // 
             // lbl_supplierCnpj
             // 
