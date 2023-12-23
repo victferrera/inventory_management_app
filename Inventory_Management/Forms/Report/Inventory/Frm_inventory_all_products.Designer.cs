@@ -40,17 +40,18 @@
             grid_produtos.Name = "grid_produtos";
             grid_produtos.ReadOnly = true;
             grid_produtos.RowHeadersWidth = 51;
-            grid_produtos.RowTemplate.Height = 29;
             grid_produtos.Size = new Size(776, 394);
             grid_produtos.TabIndex = 0;
             // 
-            // Frm_rel_estoque
+            // Frm_inventory_all_products
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(grid_produtos);
-            Name = "Frm_rel_estoque";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "Frm_inventory_all_products";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Relatório Estoque";
             ((System.ComponentModel.ISupportInitialize)grid_produtos).EndInit();
             ResumeLayout(false);

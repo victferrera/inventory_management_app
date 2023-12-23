@@ -317,7 +317,9 @@
             Controls.Add(txt_supplierName);
             Controls.Add(lbl_supplierCnpj);
             Controls.Add(txt_supplierCnpj);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Frm_supplier";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Fornecedor";
             Load += Frm_supplier_Load;
             grp_supplierInfo.ResumeLayout(false);
