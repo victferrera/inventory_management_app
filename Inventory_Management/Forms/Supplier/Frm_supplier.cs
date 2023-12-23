@@ -3,6 +3,7 @@ using GE.BL.Exceptions;
 using GE.BL.Interfaces;
 using GE.BL.Messages;
 using Inventory_Management.Forms;
+using System.Text.RegularExpressions;
 
 namespace Forms.Suppliers
 {
@@ -48,7 +49,8 @@ namespace Forms.Suppliers
                 _supplierService.Save(supplier);
                 MessageBox.Show(SuccessMessages.supplierSavedSuccess);
                 ResetForm(this);
-            }catch(ValidatorException ex)
+            }
+            catch (ValidatorException ex)
             {
                 MessageBox.Show(String.Join("\n", ex.errors));
             }
@@ -78,6 +80,16 @@ namespace Forms.Suppliers
         private void Frm_supplier_Load(object sender, EventArgs e)
         {
             cmb_supplierUf.DataSource = _addressService.GetStateList();
+        }
+
+        private void txt_supplierCnpj_Leave(object sender, EventArgs e)
+        {
+            txt_supplierCnpj.Text = removeSpecialChar(txt_supplierCnpj.Text);
+        }
+
+        public static string removeSpecialChar(string str)
+        {
+            return Regex.Replace(str, "[^0-9]+", "", RegexOptions.Compiled);
         }
     }
 }
