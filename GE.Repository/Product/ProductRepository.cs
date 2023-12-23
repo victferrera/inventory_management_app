@@ -15,6 +15,16 @@ namespace GE.Repository.Products
                 _products = new List<Product>();
         }
 
+        public void DeleteProductById(Guid id)
+        {
+            var product = GetProductById(id);
+
+            if (product != null)
+                _products.Remove(product);
+            else
+                throw new NotFoundException(ErrorMessages.productNotFound);
+        }
+
         public List<Product> GetAllProducts()
         {
             return _products;

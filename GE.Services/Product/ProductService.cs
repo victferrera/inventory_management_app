@@ -19,6 +19,11 @@ namespace GE.Services.Products
             _errorHandling = new ErrorHandling();
         }
 
+        public void Delete(Guid id)
+        {
+            _productRepository.DeleteProductById(id);
+        }
+
         public List<Product> GetAllProducts()
         {
             return _productRepository.GetAllProducts();
