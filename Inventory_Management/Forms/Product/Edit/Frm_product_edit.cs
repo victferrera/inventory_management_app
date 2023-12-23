@@ -2,6 +2,7 @@
 using GE.BL.Exceptions;
 using GE.BL.Helpers;
 using GE.BL.Interfaces;
+using GE.BL.Messages;
 using Inventory_Management.Forms;
 
 namespace Forms.Products.Edit
@@ -52,7 +53,20 @@ namespace Forms.Products.Edit
 
         private void btn_frmedit_remover_Click(object sender, EventArgs e)
         {
-               
+            try
+            {
+                _productService.Delete(GuidHelper.TryParse(txt_edit_productId.Text.Trim()));
+                MessageBox.Show(SuccessMessages.productRemovedSuccess);
+                ResetForm(this);
+            }
+            catch (NotFoundException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (GuidParseException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void fillFields(Product product)
