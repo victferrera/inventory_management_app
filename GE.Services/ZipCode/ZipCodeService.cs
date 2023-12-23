@@ -1,6 +1,8 @@
 ﻿using GE.BL.Entities;
 using GE.BL.Interfaces;
+using GE.BL.Messages;
 using RestSharp;
+using System.Net;
 using System.Text.Json;
 
 namespace GE.Services.ZipCode
@@ -24,7 +26,11 @@ namespace GE.Services.ZipCode
             try
             {
                 var response = _restClient.Execute(request);
-                if (response != null) 
+
+                if (response.StatusCode.Equals(HttpStatusCode.BadRequest))
+                    throw new FormatException(ErrorMessages.invalidZipCodeFormat);
+
+                if (response != null)
                 {
                     return JsonSerializer.Deserialize<Address>(response.Content);
                 }
