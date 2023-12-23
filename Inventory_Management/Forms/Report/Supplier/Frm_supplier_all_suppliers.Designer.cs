@@ -47,7 +47,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(grid_suppliers);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Frm_supplier_all_suppliers";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Fornecedores";
             ((System.ComponentModel.ISupportInitialize)grid_suppliers).EndInit();
             ResumeLayout(false);

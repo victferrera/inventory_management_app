@@ -145,7 +145,9 @@
             Controls.Add(grp_edit_productInfo);
             Controls.Add(btn_edit_searchBtn);
             Controls.Add(txt_edit_productId);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Frm_product_edit";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Editar produto";
             grp_edit_productInfo.ResumeLayout(false);
             grp_edit_productInfo.PerformLayout();

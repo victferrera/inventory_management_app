@@ -99,7 +99,9 @@
             Controls.Add(txt_new_productDesc);
             Controls.Add(lbl_new_name);
             Controls.Add(txt_new_productName);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Frm_product_new";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Novo produto";
             ResumeLayout(false);
             PerformLayout();

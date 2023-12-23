@@ -38,13 +38,13 @@
             productSubMenuEdit = new ToolStripMenuItem();
             supplierMenu = new ToolStripMenuItem();
             supplierSubMenuNew = new ToolStripMenuItem();
+            supplierSubMenuEdit = new ToolStripMenuItem();
             actionsMenu = new ToolStripMenuItem();
             actionsSubMenuInput = new ToolStripMenuItem();
             actionsSubMenuOutput = new ToolStripMenuItem();
             reportsMenu = new ToolStripMenuItem();
             reportsSubMenuInventory = new ToolStripMenuItem();
             reportsSubMenuSupplier = new ToolStripMenuItem();
-            supplierSubMenuEdit = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -109,9 +109,16 @@
             // supplierSubMenuNew
             // 
             supplierSubMenuNew.Name = "supplierSubMenuNew";
-            supplierSubMenuNew.Size = new Size(224, 26);
+            supplierSubMenuNew.Size = new Size(131, 26);
             supplierSubMenuNew.Text = "Novo";
             supplierSubMenuNew.Click += fornecedorNovoToolStripMenuItem1_Click;
+            // 
+            // supplierSubMenuEdit
+            // 
+            supplierSubMenuEdit.Name = "supplierSubMenuEdit";
+            supplierSubMenuEdit.Size = new Size(131, 26);
+            supplierSubMenuEdit.Text = "Editar";
+            supplierSubMenuEdit.Click += supplierSubMenuEdit_Click;
             // 
             // actionsMenu
             // 
@@ -153,21 +160,16 @@
             reportsSubMenuSupplier.Text = "Fornecedores";
             reportsSubMenuSupplier.Click += reportsSubMenuSupplier_Click;
             // 
-            // supplierSubMenuEdit
-            // 
-            supplierSubMenuEdit.Name = "supplierSubMenuEdit";
-            supplierSubMenuEdit.Size = new Size(224, 26);
-            supplierSubMenuEdit.Text = "Editar";
-            supplierSubMenuEdit.Click += supplierSubMenuEdit_Click;
-            // 
             // Frm_main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "Frm_main";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciamento de Estoque";
             contextMenuStrip1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
