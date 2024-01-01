@@ -17,6 +17,15 @@ namespace Inventory_Management
                 if (current is GroupBox)
                     IterateEachControlAndClean(current);
 
+                if (current is TabControl)
+                    IterateEachControlAndClean(current);
+
+                if(current is TabPage)
+                    IterateEachControlAndClean(current);
+
+                if (current is DataGridView)
+                    ResetDataGridView(current);
+
                 if (current is TextBox)
                     ResetTextBox(current);
 
@@ -26,6 +35,12 @@ namespace Inventory_Management
                 if (current is ComboBox)
                     ResetComboBox(current);
             }
+        }
+
+        private static void ResetDataGridView(Control control)
+        {
+            DataGridView dataGrid = (DataGridView)control;
+            dataGrid.DataSource = null;
         }
 
         private static void ResetTextBox(Control control)

@@ -18,11 +18,8 @@ namespace GE.Repository.Products
         public void DeleteProductById(Guid id)
         {
             var product = GetProductById(id);
-
-            if (product != null)
-                _products.Remove(product);
-            else
-                throw new NotFoundException(ErrorMessages.productNotFound);
+            
+            _products.Remove(product);
         }
 
         public List<Product> GetAllProducts()
@@ -32,7 +29,11 @@ namespace GE.Repository.Products
 
         public Product GetProductById(Guid id)
         {
-            return _products.FirstOrDefault(p => p.Id == id);
+            var product =  _products.FirstOrDefault(p => p.Id == id);
+            if (product != null)
+                return product;
+            else
+                throw new NotFoundException(ErrorMessages.productNotFound);
         }
 
         public Product GetProductByName(string name)

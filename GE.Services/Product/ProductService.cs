@@ -34,6 +34,11 @@ namespace GE.Services.Products
             return _productRepository.GetProductById(id);
         }
 
+        public Product GetProductByName(string name)
+        {
+            return _productRepository.GetProductByName(name);
+        }
+
         public void Save(Product product)
         {
             Validate(product);

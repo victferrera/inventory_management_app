@@ -3,6 +3,7 @@ using GE.BL.Entities;
 using GE.BL.Validators;
 using GE.BL.Exceptions;
 using GE.BL.Helpers;
+using GE.BL.Messages;
 
 namespace GE.Services.Suppliers
 {
@@ -88,7 +89,12 @@ namespace GE.Services.Suppliers
 
         public Supplier GetSupplierByCnpj(string cnpj)
         {
-            return _supplierRepository.GetSupplierByCnpj(cnpj);
+            var supplier =  _supplierRepository.GetSupplierByCnpj(cnpj);
+
+            if (supplier != null)
+                return supplier;
+            else
+                throw new NotFoundException(ErrorMessages.supplierNotFound);
         }
 
         public void Update(Supplier supplier)
