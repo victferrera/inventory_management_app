@@ -5,24 +5,21 @@ namespace GE.Repository.Inventory
 {
     public class InventoryProductRepository : IInventoryProductRepository
     {
+        private List<GE.BL.Entities.Inventory> _inventory;
         public InventoryProductRepository()
         {
-            
+            if(_inventory == null)
+                _inventory = new List<BL.Entities.Inventory> ();
         }
 
-        public List<Product> GetAllProducts()
+        public List<BL.Entities.Inventory> GetInventoryAllProducts()
         {
-            throw new NotImplementedException();
+            return _inventory;
         }
 
-        public Product GetProductById(Guid id)
+        public void Save(GE.BL.Entities.Inventory newEntry)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Save(Product produto)
-        {
-            throw new NotImplementedException();
+            _inventory.Add(newEntry);
         }
     }
 }

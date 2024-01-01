@@ -130,13 +130,14 @@
             // actionsSubMenuInput
             // 
             actionsSubMenuInput.Name = "actionsSubMenuInput";
-            actionsSubMenuInput.Size = new Size(143, 26);
+            actionsSubMenuInput.Size = new Size(224, 26);
             actionsSubMenuInput.Text = "Entrada";
+            actionsSubMenuInput.Click += actionsSubMenuInput_Click;
             // 
             // actionsSubMenuOutput
             // 
             actionsSubMenuOutput.Name = "actionsSubMenuOutput";
-            actionsSubMenuOutput.Size = new Size(143, 26);
+            actionsSubMenuOutput.Size = new Size(224, 26);
             actionsSubMenuOutput.Text = "Saida";
             // 
             // reportsMenu

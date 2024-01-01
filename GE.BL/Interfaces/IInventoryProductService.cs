@@ -4,8 +4,7 @@ namespace GE.BL.Interfaces
 {
     public interface IInventoryProductService
     {
-        void Save(Product product);
-        List<Product> GetAllProducts();
-        Product GetProductById();
+        void Save(Inventory inventoryEntry);
+        List<Inventory> GetInventoryAllProducts();
     }
 }

@@ -5,25 +5,20 @@ namespace Gerenciamento_Estoque.Services
 {
     public class InventoryProductService : IInventoryProductService
     {
-        private IInventoryProductRepository _inventoryProductsService;
-        public InventoryProductService(IInventoryProductRepository inventoryProductsService)
+        private IInventoryProductRepository _inventoryProductsRepository;
+        public InventoryProductService(IInventoryProductRepository inventoryProductsRepository)
         {
-            _inventoryProductsService = inventoryProductsService;
+            _inventoryProductsRepository = inventoryProductsRepository;
         }
 
-        public List<Product> GetAllProducts()
+        public List<Inventory> GetInventoryAllProducts()
         {
-            throw new NotImplementedException();
+            return _inventoryProductsRepository.GetInventoryAllProducts();
         }
 
-        public Product GetProductById()
+        public void Save(Inventory inventoryEntry)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Save(Product product)
-        {
-            throw new NotImplementedException();
+            _inventoryProductsRepository.Save(inventoryEntry);
         }
     }
 }
