@@ -7,6 +7,8 @@ namespace GE.BL.Interfaces
         void Save(Product product);
         void Update(Product product);
         Product GetProductById(Guid id);
+        Product GetProductByName(string name);
         List<Product> GetAllProducts();
+        void Delete(Guid id);
     }
 }

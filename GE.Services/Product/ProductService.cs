@@ -1,8 +1,8 @@
 ﻿using GE.BL.Entities;
 using GE.BL.Exceptions;
+using GE.BL.Helpers;
 using GE.BL.Interfaces;
 using GE.BL.Validators;
-using System.ComponentModel.DataAnnotations;
 
 namespace GE.Services.Products
 {
@@ -10,13 +10,18 @@ namespace GE.Services.Products
     {
         private readonly IProductRepository _productRepository;
         private readonly ProductValidator _productValidator;
-        private readonly ValidatorException _validatorException;
+        private ErrorHandling _errorHandling;
 
         public ProductService(IProductRepository productRepository, ProductValidator productValidator)
         {
             _productRepository = productRepository;
             _productValidator = productValidator;
-            _validatorException = new ValidatorException();
+            _errorHandling = new ErrorHandling();
+        }
+
+        public void Delete(Guid id)
+        {
+            _productRepository.DeleteProductById(id);
         }
 
         public List<Product> GetAllProducts()
@@ -27,6 +32,11 @@ namespace GE.Services.Products
         public Product GetProductById(Guid id)
         {
             return _productRepository.GetProductById(id);
+        }
+
+        public Product GetProductByName(string name)
+        {
+            return _productRepository.GetProductByName(name);
         }
 
         public void Save(Product product)
@@ -49,10 +59,13 @@ namespace GE.Services.Products
             {
                 foreach(var error in result.Errors)
                 {
-                    _validatorException.AddError(error.ErrorMessage);
+                    _errorHandling.AddError(error.ErrorMessage);
                 }
+            }
 
-                throw _validatorException;
+            if(_errorHandling.hasErrors)
+            {
+                throw new ValidatorException(_errorHandling.GetErrors());
             }
         }
     }

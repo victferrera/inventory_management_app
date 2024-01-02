@@ -9,5 +9,6 @@ namespace GE.BL.Interfaces
         Product GetProductById(Guid id);
         List<Product> GetAllProducts();
         Product GetProductByName(string name);
+        void DeleteProductById(Guid id);
     }
 }

@@ -1,4 +1,16 @@
 ﻿namespace GE.BL.Entities
 {
-    public record Contact(Guid Id, Address Address, string Email, string Phone1, string Phone2);
+    public class Contact
+    {
+        public Guid Id { get; set; }
+        public Address Address { get; set; }
+        public string Email { get; set; }
+        public string Phone1 { get; set; }
+        public string Phone2 { get; set; }
+
+        public Contact()
+        {
+            Id = Guid.NewGuid();
+        }
+    }
 }

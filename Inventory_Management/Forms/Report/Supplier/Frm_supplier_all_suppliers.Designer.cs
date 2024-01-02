@@ -1,6 +1,6 @@
-﻿namespace Forms.Inventory.Reports
+﻿namespace Inventory_Management.Forms.Report.Supplier
 {
-    partial class Frm_inventory_all_products
+    partial class Frm_supplier_all_suppliers
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grid_produtos = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)grid_produtos).BeginInit();
+            grid_suppliers = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)grid_suppliers).BeginInit();
             SuspendLayout();
             // 
-            // grid_produtos
+            // grid_suppliers
             // 
-            grid_produtos.AllowUserToDeleteRows = false;
-            grid_produtos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_produtos.Location = new Point(12, 44);
-            grid_produtos.Name = "grid_produtos";
-            grid_produtos.ReadOnly = true;
-            grid_produtos.RowHeadersWidth = 51;
-            grid_produtos.Size = new Size(776, 394);
-            grid_produtos.TabIndex = 0;
+            grid_suppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grid_suppliers.Location = new Point(12, 12);
+            grid_suppliers.Name = "grid_suppliers";
+            grid_suppliers.RowHeadersWidth = 51;
+            grid_suppliers.Size = new Size(776, 426);
+            grid_suppliers.TabIndex = 0;
             // 
-            // Frm_inventory_all_products
+            // Frm_supplier_all_suppliers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(grid_produtos);
+            Controls.Add(grid_suppliers);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Frm_inventory_all_products";
+            Name = "Frm_supplier_all_suppliers";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Relatório Estoque";
-            ((System.ComponentModel.ISupportInitialize)grid_produtos).EndInit();
+            Text = "Fornecedores";
+            ((System.ComponentModel.ISupportInitialize)grid_suppliers).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView grid_produtos;
+        private DataGridView grid_suppliers;
     }
 }

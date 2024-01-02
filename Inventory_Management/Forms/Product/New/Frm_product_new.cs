@@ -1,12 +1,12 @@
 ﻿using GE.BL.Entities;
 using GE.BL.Exceptions;
-using GE.BL.Helpers;
 using GE.BL.Interfaces;
 using GE.BL.Messages;
+using Inventory_Management.Forms;
 
 namespace Forms.Products.New
 {
-    public partial class Frm_product_new : Form
+    public partial class Frm_product_new : FormBase
     {
         private readonly IProductService _productService;
         public Frm_product_new(IProductService productService)
@@ -27,13 +27,14 @@ namespace Forms.Products.New
             try
             {
                 _productService.Save(product);
-                MessageBox.Show(SuccessMessages.productSavedSucess);
+                MessageBox.Show(SuccessMessages.productSavedSuccess);
+                ResetForm(this);
             }
-            catch(ValidatorException ex)
+            catch (ValidatorException ex)
             {
                 MessageBox.Show(string.Join("\n", ex.errors));
             }
-            catch(DataAlreadyExistsException ex)
+            catch (DataAlreadyExistsException ex)
             {
                 MessageBox.Show(ex.Message);
             }
