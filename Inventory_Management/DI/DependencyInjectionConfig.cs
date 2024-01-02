@@ -47,7 +47,7 @@ namespace Inventory_Management
             services.AddTransient<Frm_supplier>();
             services.AddTransient<Frm_inventory_all_products>();
             services.AddTransient<Frm_supplier_all_suppliers>();
-            services.AddTransient<Frm_inventory_input>();
+            services.AddTransient<Frm_inventory>();
 
             services.AddSingleton<IInventoryProductService, InventoryProductService>();
             services.AddSingleton<IInventoryProductRepository, InventoryProductRepository>();

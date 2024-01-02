@@ -16,6 +16,11 @@ namespace Gerenciamento_Estoque.Services
             return _inventoryProductsRepository.GetInventoryAllProducts();
         }
 
+        public void Remove(Inventory inventoryOutput)
+        {
+            _inventoryProductsRepository.Remove(inventoryOutput);
+        }
+
         public void Save(Inventory inventoryEntry)
         {
             _inventoryProductsRepository.Save(inventoryEntry);

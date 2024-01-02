@@ -1,6 +1,6 @@
 ﻿namespace Inventory_Management.Forms.Inventory
 {
-    partial class Frm_inventory_input
+    partial class Frm_inventory
     {
         /// <summary>
         /// Required designer variable.
