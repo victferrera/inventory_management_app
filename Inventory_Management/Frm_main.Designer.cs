@@ -139,6 +139,7 @@
             actionsSubMenuOutput.Name = "actionsSubMenuOutput";
             actionsSubMenuOutput.Size = new Size(224, 26);
             actionsSubMenuOutput.Text = "Saida";
+            actionsSubMenuOutput.Click += actionsSubMenuOutput_Click;
             // 
             // reportsMenu
             // 

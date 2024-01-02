@@ -6,13 +6,14 @@ using GE.BL.Messages;
 
 namespace Inventory_Management.Forms.Inventory
 {
-    public partial class Frm_inventory_input : FormBase
+    public partial class Frm_inventory : FormBase
     {
         private IInventoryProductService _inventoryProductService;
         private readonly IProductService _productService;
         private readonly ISupplierService _supplierService;
         private List<GE.BL.Entities.Inventory> _productsToBeAdd;
-        public Frm_inventory_input(IInventoryProductService inventoryProductService, IProductService productService, ISupplierService supplierService)
+        private Frm_inventory_mode _mode;
+        public Frm_inventory(IInventoryProductService inventoryProductService, IProductService productService, ISupplierService supplierService)
         {
             InitializeComponent();
             _inventoryProductService = inventoryProductService;
@@ -21,6 +22,11 @@ namespace Inventory_Management.Forms.Inventory
 
             if (_productsToBeAdd == null)
                 _productsToBeAdd = new List<GE.BL.Entities.Inventory>();
+        }
+
+        public void SetMode(Frm_inventory_mode mode)
+        {
+            _mode = mode;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -33,7 +39,10 @@ namespace Inventory_Management.Forms.Inventory
                 {
                     item.SupplierId = supplier.Id;
 
-                    _inventoryProductService.Save(item);
+                    if(_mode.Equals(Frm_inventory_mode.Frm_input))
+                        _inventoryProductService.Save(item);
+                    else
+                        _inventoryProductService.Remove(item);
                 };
 
                 MessageBox.Show(SuccessMessages.inputSavedSuccess);
@@ -44,6 +53,9 @@ namespace Inventory_Management.Forms.Inventory
             {
                 MessageBox.Show(ex.Message);
             }catch(GuidParseException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -76,6 +88,11 @@ namespace Inventory_Management.Forms.Inventory
         private void Frm_inventory_input_Load(object sender, EventArgs e)
         {
             txt_docIdentifier.Text = Guid.NewGuid().ToString();
+
+            if (_mode.Equals(Frm_inventory_mode.Frm_output))
+                this.Text = "Movimentação de Saída";
+            else
+                this.Text = "Movimentação de Entrada";
         }
 
         private void btn_addProductToList_Click(object sender, EventArgs e)

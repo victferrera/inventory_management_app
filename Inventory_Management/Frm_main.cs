@@ -64,7 +64,15 @@ namespace Inventory_Management
 
         private void actionsSubMenuInput_Click(object sender, EventArgs e)
         {
-            var form_inventory_input = _serviceProvider.GetRequiredService<Frm_inventory_input>();
+            var form_inventory_input = _serviceProvider.GetRequiredService<Frm_inventory>();
+            form_inventory_input.SetMode(Frm_inventory_mode.Frm_input);
+            form_inventory_input.Show();
+        }
+
+        private void actionsSubMenuOutput_Click(object sender, EventArgs e)
+        {
+            var form_inventory_input = _serviceProvider.GetRequiredService<Frm_inventory>();
+            form_inventory_input.SetMode(Frm_inventory_mode.Frm_output);
             form_inventory_input.Show();
         }
     }

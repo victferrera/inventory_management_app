@@ -1,5 +1,7 @@
 ﻿using GE.BL.Entities;
+using GE.BL.Exceptions;
 using GE.BL.Interfaces;
+using GE.BL.Messages;
 
 namespace GE.Repository.Inventory
 {
@@ -17,9 +19,32 @@ namespace GE.Repository.Inventory
             return _inventory;
         }
 
+        public void Remove(BL.Entities.Inventory inventoryOutput)
+        {
+            var product = _inventory.Where(x => x.productId == inventoryOutput.productId).FirstOrDefault();
+
+            if (product != null)
+            {
+                if (product.Amount < inventoryOutput.Amount)
+                    throw new Exception(ErrorMessages.insuficientProduct);
+
+                product.Amount -= inventoryOutput.Amount;
+            }
+            else
+                throw new NotFoundException(ErrorMessages.productNotFound);
+        }
+
         public void Save(GE.BL.Entities.Inventory newEntry)
         {
-            _inventory.Add(newEntry);
+            var product = _inventory.Where(x => x.productId == newEntry.productId).FirstOrDefault();
+
+            if(product != null)
+            {
+                product.Amount += newEntry.Amount;
+                product.Price = newEntry.Price;
+            }
+            else
+                _inventory.Add(newEntry);
         }
     }
 }

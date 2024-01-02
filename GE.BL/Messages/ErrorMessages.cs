@@ -8,5 +8,6 @@
         public static readonly string productAlreadyExists = "Produto já existe no banco";
         public static readonly string invalidZipCodeFormat = "Formato do CEP inválido";
         public static readonly string supplierNotFound = "Fornecedor não encontrado";
+        public static readonly string insuficientProduct = "Saldo insuficiente";
     }
 }
